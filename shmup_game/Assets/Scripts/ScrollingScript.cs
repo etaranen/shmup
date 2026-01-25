@@ -3,37 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-/// <summary>
 /// Parallax scrolling script that should be assigned to a layer
-/// </summary>
 public class ScrollingScript : MonoBehaviour
 {
-    /// <summary>
     /// Scrolling speed
-    /// </summary>
     public Vector2 speed = new Vector2(10, 10);
 
-    /// <summary>
     /// Moving direction
-    /// </summary>
     public Vector2 direction = new Vector2(-1, 0);
 
-    /// <summary>
     /// Movement should be applied to camera
-    /// </summary>
     public bool isLinkedToCamera = false;
 
-    /// <summary>
-    /// 1 - Background is infinite
-    /// </summary>
+    /// Background is infinite
     public bool isLooping = false;
 
-    /// <summary>
-    /// 2 - List of children with a renderer.
-    /// </summary>
+    /// List of children with a renderer.
     private List<SpriteRenderer> backgroundPart;
 
-    // 3 - Get all the children
+    // Get all the children
     void Start()
     {
         // For infinite background only
@@ -81,7 +69,7 @@ public class ScrollingScript : MonoBehaviour
             Camera.main.transform.Translate(movement);
         }
 
-        // 4 - Loop
+        // Loop
         if (isLooping)
         {
             // Get the first object.
