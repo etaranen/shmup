@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class WeaponScript : MonoBehaviour
 {
-    //--------------------------------
+  //--------------------------------
   // 1 - Designer variables
   //--------------------------------
 
