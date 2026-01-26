@@ -4,9 +4,43 @@ using UnityEngine;
 
 public class MenuScript : MonoBehaviour
 {
-    public void StartGame()
+    public GameObject mainMenu;
+    public GameObject instructions;
+    public GameObject credits;
+        public void StartGame()
     {
         // "Stage1" is the name of the first scene.
         Application.LoadLevel("Stage1");
+    }
+
+    // Show Instructions screen
+    public void ShowInstructions()
+    {
+        mainMenu.SetActive(false);
+        instructions.SetActive(true);
+        credits.SetActive(false);
+    }
+
+    // Show Credits screen
+    public void ShowCredits()
+    {
+        mainMenu.SetActive(false);
+        instructions.SetActive(false);
+        credits.SetActive(true);
+    }
+
+    // Back to Main Menu
+    public void ShowMainMenu()
+    {
+        mainMenu.SetActive(true);
+        instructions.SetActive(false);
+        credits.SetActive(false);
+    }
+
+    // Quit Game
+    public void QuitGame()
+    {
+        Debug.Log("Quit Game"); // shows in editor
+        Application.Quit();
     }
 }
