@@ -77,6 +77,11 @@ public class PlayerScript : MonoBehaviour
         // Game Over.
         GameOverScript gameOver = FindObjectOfType<GameOverScript>();
         
+        if (ScoreManagerScript.Instance != null)
+        {
+            ScoreManagerScript.Instance.gameRunning = false;
+        }
+
         if (gameOver != null)
         {
             gameOver.ShowMenu();

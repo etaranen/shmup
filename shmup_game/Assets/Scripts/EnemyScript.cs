@@ -25,7 +25,7 @@ public class EnemyScript : MonoBehaviour
     rendererComponent = GetComponent<SpriteRenderer>();
   }
 
-// Disable everything
+  // Disable everything
   void Start()
   {
       hasSpawn = false;
@@ -71,7 +71,7 @@ public class EnemyScript : MonoBehaviour
       }
     }
 
-    // Activate itself.
+  // Activate itself.
   private void Spawn()
   {
     hasSpawn = true;
@@ -86,5 +86,13 @@ public class EnemyScript : MonoBehaviour
     {
       weapon.enabled = true;
     }
+  }
+
+  void OnDestroy()
+  {
+      if (ScoreManagerScript.Instance != null)
+      {
+          ScoreManagerScript.Instance.AddKillScore();
+      }
   }
 }
