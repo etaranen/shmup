@@ -13,10 +13,12 @@ public class ScoreManagerScript : MonoBehaviour
 
     public int score;
     public int highScore;
+    public static int sessionHighScore = 0;
     public int pointsPerSecond = 1;
     public int pointsPerKill = 100;
 
     private bool newHighScoreAchieved = false;
+
     public bool gameRunning = true;
 
     void Awake()
@@ -24,14 +26,13 @@ public class ScoreManagerScript : MonoBehaviour
         if (Instance == null)
         {    
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }    
         else
         {    
             Destroy(gameObject);
             return;
         }
-
+        highScore = sessionHighScore;
         newHighScoreText.gameObject.SetActive(false);
     }
 
@@ -44,6 +45,7 @@ public class ScoreManagerScript : MonoBehaviour
         if (score > highScore)
         {
             highScore = score;
+            sessionHighScore = highScore;
 
             if (!newHighScoreAchieved)
             {
