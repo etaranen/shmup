@@ -71,4 +71,20 @@ public class PlayerScript : MonoBehaviour
         // Move the game object
         rigidbodyComponent.velocity = movement;
     }
+
+    void OnDestroy()
+    {
+        // Game Over.
+        GameOverScript gameOver = FindObjectOfType<GameOverScript>();
+        
+        if (gameOver != null)
+        {
+            gameOver.ShowMenu();
+        }
+        else
+        {
+            Debug.LogError("GameOverScript not found in scene!");
+        }
+    }
+
 }
