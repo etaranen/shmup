@@ -7,7 +7,7 @@ public class ShotScript : MonoBehaviour
   // Designer variables
 
   /// Damage inflicted
-  public int damage = 1;
+  public int damage;
 
   /// Projectile damage player or enemies?
   public bool isEnemyShot = false;
