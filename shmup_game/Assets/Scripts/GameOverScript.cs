@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 /// Start or quit the game
 public class GameOverScript : MonoBehaviour
@@ -30,12 +31,12 @@ public class GameOverScript : MonoBehaviour
     public void ExitToMenu()
     {
         // Reload the level
-        Application.LoadLevel("Menu");
+        SceneManager.LoadScene("Menu");
     }
 
     public void RestartGame()
     {
         // Reload the level
-        Application.LoadLevel("Stage1");
+        SceneManager.LoadScene("Stage1");
     }
 }

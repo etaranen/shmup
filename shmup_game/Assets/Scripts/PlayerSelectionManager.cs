@@ -7,24 +7,23 @@ public class PlayerSelectionManager : MonoBehaviour
 {
     public static PlayerSelectionManager Instance;
 
-    [Header("Available Ships")]
-    public PlayerData ship1;
-    public PlayerData ship2;
+    public GameObject ship1;
+    public GameObject ship2;
 
-    [HideInInspector]
-    public PlayerData selectedShip;
+    public GameObject selectedShip;
 
     void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
+            return;
         }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        Debug.Log("PlayerSelectionManager created and persisted");
     }
 
     public void SelectShip1()

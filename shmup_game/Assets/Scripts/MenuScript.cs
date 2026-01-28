@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
@@ -11,8 +12,13 @@ public class MenuScript : MonoBehaviour
     
     public void StartGame()
     {
-        // "Stage1" is the name of the first scene.
-        Application.LoadLevel("Stage1");
+        if (PlayerSelectionManager.Instance == null)
+        {
+            Debug.LogError("PlayerSelectionManager missing BEFORE scene load!");
+        }
+
+        SceneManager.LoadScene("Stage1");
+        // Destroy(gameObject); 
     }
 
     // Show Ship Selection screen
