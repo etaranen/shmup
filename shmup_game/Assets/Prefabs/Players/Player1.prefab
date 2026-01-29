@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 4, y: 4}
+  specialCooldown: 5
 --- !u!114 &5634685742011620226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 2137740885398559201, guid: 43e6866d1c95de24f990ba81edf41bf7, type: 3}
+  homingShotPrefab: {fileID: 2137740885398559201, guid: b541c47234c469f45b4c1b9f267a103c, type: 3}
   shootingRate: 0.25
 --- !u!114 &690791539000415909
 MonoBehaviour:

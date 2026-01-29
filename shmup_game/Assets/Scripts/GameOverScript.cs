@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-/// Start or quit the game
 public class GameOverScript : MonoBehaviour
 {
     [SerializeField] private GameObject background;
@@ -30,13 +29,11 @@ public class GameOverScript : MonoBehaviour
 
     public void ExitToMenu()
     {
-        // Reload the level
         SceneManager.LoadScene("Menu");
     }
 
     public void RestartGame()
     {
-        // Reload the level
         SceneManager.LoadScene("Stage1");
     }
 }

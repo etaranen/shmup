@@ -9,10 +9,8 @@ public class CoinScript : MonoBehaviour
 
     void Update()
     {
-        // Move left like enemies
         transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
 
-        // Destroy if off screen
         if (transform.position.x < -12f)
         {
             Destroy(gameObject);

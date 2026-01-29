@@ -18,10 +18,8 @@ public class MenuScript : MonoBehaviour
         }
 
         SceneManager.LoadScene("Stage1");
-        // Destroy(gameObject); 
     }
 
-    // Show Ship Selection screen
     public void ShowShipSelection()
     {
         mainMenu.SetActive(false);
@@ -30,7 +28,6 @@ public class MenuScript : MonoBehaviour
         credits.SetActive(false);
     }
 
-    // Show Instructions screen
     public void ShowInstructions()
     {
         mainMenu.SetActive(false);
@@ -39,7 +36,6 @@ public class MenuScript : MonoBehaviour
         credits.SetActive(false);
     }
 
-    // Show Credits screen
     public void ShowCredits()
     {
         mainMenu.SetActive(false);
@@ -48,7 +44,6 @@ public class MenuScript : MonoBehaviour
         credits.SetActive(true);
     }
 
-    // Back to Main Menu
     public void ShowMainMenu()
     {
         mainMenu.SetActive(true);
@@ -57,10 +52,9 @@ public class MenuScript : MonoBehaviour
         credits.SetActive(false);
     }
 
-    // Quit Game
     public void QuitGame()
     {
-        Debug.Log("Quit Game"); // shows in editor
+        Debug.Log("Quit Game");
         Application.Quit();
     }
 }

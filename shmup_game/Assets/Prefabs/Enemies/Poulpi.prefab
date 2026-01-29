@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7560396481013429204}
   m_Layer: 0
   m_Name: Poulpi
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0431eb1e5817efd46bf4373010e5fcee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  hp: 2
   isEnemy: 1
 --- !u!114 &7560396481013429204
 MonoBehaviour:
@@ -203,6 +203,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6ebd7ec8dde46448f3f7efaff3671d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dodgeDistance: 2
+  dodgeSpeed: 5
+  detectionRange: 5
 --- !u!1001 &1504111721584893473
 PrefabInstance:
   m_ObjectHideFlags: 0

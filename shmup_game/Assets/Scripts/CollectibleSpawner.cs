@@ -15,7 +15,6 @@ public class CollectibleSpawner : MonoBehaviour
 
     void SpawnCoin()
     {
-        // Only spawn if game is running
         if (!ScoreManagerScript.Instance.gameRunning) return;
 
         Camera cam = Camera.main;
