@@ -2112,6 +2112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2061882044}
   - component: {fileID: 2061882045}
+  - component: {fileID: 2061882046}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -2147,6 +2148,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpawn: {fileID: 2095838127}
+--- !u!114 &2061882046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061882043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a3233234afe4b4fb515951d0c67f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinPrefab: {fileID: 1176914360045460161, guid: d8678a64080874b46bf8aa35c21047d3, type: 3}
+  spawnInterval: 8
+  spawnOffsetX: 1.5
 --- !u!1 &2095838126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,11 +2410,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6093854390512974450, guid: e51e47e51731e07438bf93fd869cd1c9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.94
+      value: 8.75
       objectReference: {fileID: 0}
     - target: {fileID: 6093854390512974450, guid: e51e47e51731e07438bf93fd869cd1c9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1
+      value: -3.62
       objectReference: {fileID: 0}
     - target: {fileID: 6093854390512974450, guid: e51e47e51731e07438bf93fd869cd1c9, type: 3}
       propertyPath: m_LocalPosition.z
