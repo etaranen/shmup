@@ -84,10 +84,6 @@ public class PlayerScript : MonoBehaviour
         {
             gameOver.ShowMenu();
         }
-        else
-        {
-            Debug.LogError("GameOverScript not found in scene!");
-        }
     }
 
 }

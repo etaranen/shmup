@@ -26,8 +26,6 @@ public class HomingProjectile : MonoBehaviour
         {
             Vector3 direction = (target.position - transform.position).normalized;
             transform.position += direction * speed * Time.deltaTime;
-
-            Debug.DrawLine(transform.position, target.position, Color.red);
         }
         else
         {

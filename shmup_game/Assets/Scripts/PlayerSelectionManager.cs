@@ -22,8 +22,6 @@ public class PlayerSelectionManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        Debug.Log("PlayerSelectionManager created and persisted");
     }
 
     public void SelectShip1()

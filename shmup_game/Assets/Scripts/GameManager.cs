@@ -8,11 +8,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("GameManager started");
-
         if (PlayerSelectionManager.Instance == null)
         {
-            Debug.LogError("No PlayerSelectionManager found!");
             return;
         }
 
@@ -20,7 +17,6 @@ public class GameManager : MonoBehaviour
 
         if (selected != null)
         {
-            Debug.Log("Spawning ship: " + selected.name);
             Instantiate(selected, playerSpawn.position, Quaternion.identity);
         }
     }

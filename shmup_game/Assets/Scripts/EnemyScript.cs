@@ -15,6 +15,7 @@ public class EnemyScript : MonoBehaviour
   public float detectionRange = 5f;
   private bool isDodging = false;
   private Vector2 dodgeDirection;
+  private Vector2 dodgeTarget;
 
   void Awake()
   {
@@ -58,12 +59,18 @@ public class EnemyScript : MonoBehaviour
       DetectProjectiles();
 
       if (isDodging)
-        {
-          transform.position = Vector2.MoveTowards(transform.position, (Vector2)transform.position + dodgeDirection, dodgeSpeed * Time.deltaTime);
+      {
+          transform.position = Vector2.MoveTowards(
+              transform.position,
+              dodgeTarget,
+              dodgeSpeed * Time.deltaTime
+          );
 
-          if (Vector2.Distance(transform.position, (Vector2)transform.position - dodgeDirection) >= dodgeDistance)
+          if (Vector2.Distance(transform.position, dodgeTarget) < 0.1f)
+          {
               isDodging = false;
-        }
+          }
+      }
 
       if (rendererComponent.IsVisibleFrom(Camera.main) == false)
         {
@@ -87,31 +94,36 @@ public class EnemyScript : MonoBehaviour
 
   void DetectProjectiles()
   {
-      if (isDodging) return;
+    if (isDodging) return;
 
-      GameObject[] projectiles = GameObject.FindGameObjectsWithTag("PlayerProjectile");
+    GameObject[] projectiles = GameObject.FindGameObjectsWithTag("PlayerProjectile");
 
-      foreach (GameObject proj in projectiles)
-      {
-          Vector2 toProjectile = proj.transform.position - transform.position;
+    foreach (GameObject proj in projectiles)
+    {
+        Rigidbody2D projRb = proj.GetComponent<Rigidbody2D>();
+        if (projRb == null) continue;
 
-          Rigidbody2D projRb = proj.GetComponent<Rigidbody2D>();
-          if (projRb == null) continue;
+        Vector2 toEnemy = (Vector2)transform.position - projRb.position;
+        float distance = toEnemy.magnitude;
 
-          Vector2 projVelocity = projRb.velocity;
-          float approach = Vector2.Dot(projVelocity.normalized, toProjectile.normalized);
+        if (distance > detectionRange) continue;
 
-          if (toProjectile.magnitude < detectionRange && approach > 0.8f) 
-          {
-              dodgeDirection = Vector2.Perpendicular(projVelocity).normalized * dodgeDistance;
+        float dot = Vector2.Dot(projRb.velocity.normalized, toEnemy.normalized);
 
-              if (Random.value < 0.5f) dodgeDirection *= -1;
+        if (dot > 0.9f)
+        {
+            Vector2 perpendicular = Vector2.Perpendicular(projRb.velocity).normalized;
 
-              isDodging = true;
-              break;
-          }
-      }
+            if (Random.value < 0.5f)
+                perpendicular *= -1;
+
+            dodgeTarget = (Vector2)transform.position + perpendicular * dodgeDistance;
+            isDodging = true;
+            break;
+        }
+    }
   }
+
   void OnDestroy()
   {
       if (ScoreManagerScript.Instance != null)

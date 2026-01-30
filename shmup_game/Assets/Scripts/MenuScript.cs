@@ -12,11 +12,6 @@ public class MenuScript : MonoBehaviour
     
     public void StartGame()
     {
-        if (PlayerSelectionManager.Instance == null)
-        {
-            Debug.LogError("PlayerSelectionManager missing BEFORE scene load!");
-        }
-
         SceneManager.LoadScene("Stage1");
     }
 
@@ -54,7 +49,6 @@ public class MenuScript : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Quit Game");
         Application.Quit();
     }
 }
