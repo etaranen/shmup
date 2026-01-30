@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
+    public GameObject opening;
     public GameObject mainMenu;
     public GameObject shipSelection;
     public GameObject instructions;
@@ -12,7 +13,15 @@ public class MenuScript : MonoBehaviour
     
     public void StartGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Stage1");
+    }
+
+    public void ContinueGame()
+    {
+        opening.SetActive(false);
+        Time.timeScale = 1f;
+        ShowMainMenu();
     }
 
     public void ShowShipSelection()
@@ -41,6 +50,8 @@ public class MenuScript : MonoBehaviour
 
     public void ShowMainMenu()
     {
+        Time.timeScale = 1f;
+
         mainMenu.SetActive(true);
         shipSelection.SetActive(false);
         instructions.SetActive(false);

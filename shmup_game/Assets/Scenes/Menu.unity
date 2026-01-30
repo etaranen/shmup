@@ -5111,6 +5111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4892bd715536634a9a7c4617e202d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  opening: {fileID: 603527485}
   mainMenu: {fileID: 1568572248}
   shipSelection: {fileID: 2123455493}
   instructions: {fileID: 347230825}
@@ -5144,7 +5145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ship1: {fileID: 6501019789106441682, guid: d9f20554c10b18e4bb25ec7fbe3794dd, type: 3}
   ship2: {fileID: 27444593990560455, guid: 127c47c9266035646a6e84e0bdd5ca83, type: 3}
-  selectedShip: {fileID: 0}
+  selectedShip: {fileID: 6501019789106441682, guid: d9f20554c10b18e4bb25ec7fbe3794dd, type: 3}
 --- !u!1 &2017821011
 GameObject:
   m_ObjectHideFlags: 0
@@ -5364,7 +5365,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1951852561}
         m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: ShowMainMenu
+        m_MethodName: ContinueGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
