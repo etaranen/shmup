@@ -1,5 +1,6 @@
 # Shoot 'Em Up
 A 2D side-scrolling shoot ’em up (shmup) built in Unity, featuring dynamic enemies, multiple ship types, and scoring mechanics.
+
 Itch.io: https://etaranen.itch.io/shmup-game
 
 ## How to Play
